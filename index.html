@@ -13,9 +13,11 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #FF6B35 0%, #004E89 25%, #1A1A2E 50%, #FF6B35 75%, #004E89 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx9o_MBSGaQWv0-OCRY2dptbOcbTQe-lOipQ&s');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-color: #000;
             color: #fff;
             min-height: 100vh;
             display: flex;
@@ -24,6 +26,20 @@
             padding: 20px;
             position: relative;
             overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.4) 0%, rgba(0, 78, 137, 0.4) 50%, rgba(255, 107, 53, 0.4) 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            pointer-events: none;
+            z-index: 1;
         }
 
         @keyframes gradientShift {
@@ -38,96 +54,18 @@
             }
         }
 
-        /* Kunai animati */
-        .kunai {
-            position: fixed;
-            pointer-events: none;
-            opacity: 0.3;
-            font-size: 2em;
-        }
-
-        .kunai-1 {
-            top: 10%;
-            left: 5%;
-            animation: floatKunai1 20s ease-in-out infinite;
-        }
-
-        .kunai-2 {
-            top: 20%;
-            right: 8%;
-            animation: floatKunai2 25s ease-in-out infinite;
-            transform: rotate(45deg);
-        }
-
-        .kunai-3 {
-            top: 40%;
-            left: 10%;
-            animation: floatKunai3 22s ease-in-out infinite;
-            transform: rotate(-30deg);
-        }
-
-        .kunai-4 {
-            top: 60%;
-            right: 5%;
-            animation: floatKunai4 23s ease-in-out infinite;
-            transform: rotate(60deg);
-        }
-
-        .kunai-5 {
-            top: 75%;
-            left: 8%;
-            animation: floatKunai5 21s ease-in-out infinite;
-            transform: rotate(-45deg);
-        }
-
-        .kunai-6 {
-            top: 30%;
-            right: 15%;
-            animation: floatKunai6 24s ease-in-out infinite;
-        }
-
-        @keyframes floatKunai1 {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
-            50% { transform: translateY(-50px) rotate(180deg); opacity: 0.5; }
-        }
-
-        @keyframes floatKunai2 {
-            0%, 100% { transform: translateY(0px) rotate(45deg); opacity: 0.3; }
-            50% { transform: translateY(-60px) rotate(225deg); opacity: 0.5; }
-        }
-
-        @keyframes floatKunai3 {
-            0%, 100% { transform: translateY(0px) rotate(-30deg); opacity: 0.2; }
-            50% { transform: translateY(-40px) rotate(150deg); opacity: 0.4; }
-        }
-
-        @keyframes floatKunai4 {
-            0%, 100% { transform: translateY(0px) rotate(60deg); opacity: 0.3; }
-            50% { transform: translateY(-55px) rotate(240deg); opacity: 0.5; }
-        }
-
-        @keyframes floatKunai5 {
-            0%, 100% { transform: translateY(0px) rotate(-45deg); opacity: 0.2; }
-            50% { transform: translateY(-45px) rotate(135deg); opacity: 0.4; }
-        }
-
-        @keyframes floatKunai6 {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.25; }
-            50% { transform: translateY(-50px) rotate(180deg); opacity: 0.45; }
-        }
-
         .container {
             max-width: 800px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             border: 3px solid;
             border-image: linear-gradient(135deg, #FF6B35, #004E89) 1;
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 8px 32px rgba(255, 107, 157, 0.3), inset 0 0 20px rgba(255, 107, 35, 0.1);
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.3), inset 0 0 20px rgba(255, 107, 35, 0.1);
             backdrop-filter: blur(10px);
             text-align: center;
             position: relative;
-            z-index: 10;
+            z-index: 20;
         }
 
         .header {
@@ -264,14 +202,6 @@
     </style>
 </head>
 <body>
-    <!-- Kunai decorativi che fluttuano -->
-    <div class="kunai kunai-1">⚡</div>
-    <div class="kunai kunai-2">⚡</div>
-    <div class="kunai kunai-3">⚡</div>
-    <div class="kunai kunai-4">⚡</div>
-    <div class="kunai kunai-5">⚡</div>
-    <div class="kunai kunai-6">⚡</div>
-
     <div class="container">
         <div class="header">
             <h1><span class="emoji">🔥</span> Il Mio Migliore Amico <span class="emoji">⚡</span></h1>
